@@ -1,3 +1,5 @@
+# Singleton accidently, but not process-safe (thread-safe)
+
 class FakeProperty:
 
     def __init__(self, attr: str, dtype:Type) -> None:
