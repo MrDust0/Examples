@@ -10,3 +10,20 @@ class Singleton(type):
 
 class Test(metaclass=Singleton):
     pass
+
+
+# https://www.jianshu.com/p/eeda9fdf2e03
+def singleton(cls, *args, **kw):
+    instances = {}
+
+    def _singleton():
+        if cls not in instances:
+            instances[cls] = cls(*args, **kw)
+        return instances[cls]
+
+    return _singleton
+
+
+@singleton
+class LogHelper(object):
+    x = # something
